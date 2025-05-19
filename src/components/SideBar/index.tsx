@@ -25,7 +25,7 @@ export default function SideBar() {
         setOpenMenu(openMenu === menu ? null : menu);
     };
 
-    return (
+    return(
         <aside className="bg-white flex flex-col w-64 px-4 py-4 font-Poppins border-r border-[#E0E0E0]">
             <div className="w-48">
                 <img src={LogoImersiva} alt="Logo" />
@@ -38,10 +38,9 @@ export default function SideBar() {
                                 <button
                                     onClick={() => toggleMenu(item.label)}
                                     className={`
-                                        flex justify-between items-center text-lg px-4 py-2 w-full text-left rounded
-                                        transition-colors duration-300 ease-in-out cursor-pointer
-                                        hover:bg-[#6F51EC] hover:text-white
-                                        ${openMenu === item.label ? "bg-[#f5f5ff]" : ""}
+                                        flex justify-between items-center text-lg px-4 py-2 w-full text-blackColor1 text-left rounded
+                                        transition-colors duration-300 ease-in-out cursor-pointer hover:text-mainColor
+                                        ${openMenu === item.label ? "bg-[#f8f8ff]" : ""}
                                     `}>
                                     <span className="flex items-center gap-2">
                                         {item.label === "Aprendizado" && (
@@ -64,10 +63,10 @@ export default function SideBar() {
                                                 key={child.path}
                                                 to={child.path}
                                                 className={`
-                                                    block text-lg px-4 py-2 rounded transition-colors duration-300
+                                                    block text-lg px-4 py-2 text-blackColor1 rounded transition-colors duration-300
                                                     ${location.pathname === child.path
-                                                        ? "bg-[#6F51EC] text-white"
-                                                        : "hover:bg-[#6F51EC] hover:text-white"}
+                                                        ? "text-mainColor"
+                                                        : "hover:text-mainColor"}
                                                 `}>
                                                 {child.label}
                                             </Link>
@@ -79,10 +78,10 @@ export default function SideBar() {
                             <Link
                                 to={item.path}
                                 className={`
-                                    flex flex-row items-center gap-2 text-lg px-4 py-2 rounded transition-colors duration-300
+                                    flex flex-row items-center gap-2 text-blackColor1 text-lg px-4 py-2 rounded transition-colors duration-300
                                     ${location.pathname === item.path
-                                        ? "bg-[#6F51EC] text-white"
-                                        : "hover:bg-[#6F51EC] hover:text-white"}
+                                        ? "text-mainColor"
+                                        : "hover:text-mainColor"}
                                 `}>
                                     {item.icon && (
                                         <FontAwesomeIcon icon={item.icon}/>
@@ -99,8 +98,7 @@ export default function SideBar() {
                 iconName={faRightFromBracket}
                 nameClass={`
                     w-full flex items-center gap-2 px-4 py-2 rounded 
-                    transition-colors duration-300 ease-in-out 
-                    hover:bg-[#6F51EC] hover:text-white
+                    transition-colors duration-300 ease-in-out text-blackColor1 hover:text-mainColor 
                 `}
                 iconClass="transition-transform duration-300 group-hover:translate-x-1"
                 onClick={logout}
