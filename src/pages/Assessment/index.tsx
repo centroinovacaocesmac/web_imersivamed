@@ -55,7 +55,7 @@ export default function Assessment(){
         <Title name="Cadastro de Avaliação"/>
       </div>
       {!selected ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {topics.map((topic) => (
             <Button name={topic} nameClass="text-blackColor1 cursor-pointer bg-white border border-grayColor3 p-6 rounded-xl hover:shadow-lg transition" onClick={() => setSelected(topic)}/>
           ))}

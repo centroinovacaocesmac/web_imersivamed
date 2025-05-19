@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "@lib/firebase"
+// import { db } from "@lib/firebase"
 import Button from "@components/Button";
 import Modal from "@components/Modal";
 import Title from "@components/Title";
@@ -59,7 +59,7 @@ export default function Content(){
         <Title name="Cadastro de Conteúdo"/>
       </div>
       {!selected ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {topics.map((topic) => (
             <Button name={topic} nameClass="text-blackColor1 cursor-pointer bg-white border border-grayColor3 p-6 rounded-xl hover:shadow-lg transition" onClick={() => setSelected(topic)}/>
           ))}

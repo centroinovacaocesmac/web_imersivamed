@@ -1,4 +1,4 @@
-import { useAuth } from "@contexts/index";
+import { useAuth } from "@contexts/AuthContext";
 import Button from "@components/Button";
 
 export default function Header(){
