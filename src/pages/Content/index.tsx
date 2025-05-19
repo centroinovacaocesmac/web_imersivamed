@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@lib/firebase"
 import Button from "@components/Button";
 import Modal from "@components/Modal";
 import Title from "@components/Title";
@@ -23,14 +25,21 @@ export default function Content(){
     setBlocks(newBlocks);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    if(!selected) return;
+
     const content = {
       topic: selected,
       contents: blocks,
     };
 
-    console.log("Conteúdo salvo:", content);
-    setShowModal(true);
+    try {
+      await addDoc(collection(db, "conteudo"), content);
+      console.log("Conteúdo salvo:", content);
+      setShowModal(true);
+    } catch (error) {
+      console.error("Erro ao salvar no FireBase:", error);
+    }
   };
 
   const handleCloseModal = () => {
@@ -63,13 +72,13 @@ export default function Content(){
               <h4 className="text-blackColor1 font-normal font-Poppins mb-2">Bloco {index + 1}</h4>
               <input
                 type="text"
-                className="font-Poppins w-full px-4 py-2 mb-2 border border-grayColor3 rounded"
+                className="font-Poppins w-full px-4 py-2 mb-2 border border-grayColor3 rounded focus:outline-none focus:ring-1 focus:ring-grayColor4"
                 placeholder={`Título ${index + 1}`}
                 value={bloco.title}
                 onChange={(e) => handleInputChange(index, "title", e.target.value)}
               />
               <textarea
-                className="w-full h-32 p-4 border border-grayColor3 rounded resize-none font-Poppins"
+                className="w-full h-32 p-4 border border-grayColor3 rounded resize-none font-Poppins focus:outline-none focus:ring-1 focus:ring-grayColor4"
                 placeholder={`Descrição ${index + 1}`}
                 value={bloco.description}
                 onChange={(e) => handleInputChange(index, "description", e.target.value)}

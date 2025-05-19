@@ -1,5 +1,5 @@
-import Button from "@components/Button";
 import { type ReactNode } from "react";
+import Button from "@components/Button";
 
 type ModalProps = {
   isOpen: boolean;

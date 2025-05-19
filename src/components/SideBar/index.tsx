@@ -28,7 +28,7 @@ export default function SideBar() {
     return(
         <aside className="bg-white flex flex-col w-64 px-4 py-4 font-Poppins border-r border-[#E0E0E0]">
             <div className="w-48">
-                <img src={LogoImersiva} alt="Logo" />
+                <img src={LogoImersiva} alt="Logo"/>
             </div>
             <nav className="flex flex-col gap-4 py-12">
                 {navItems.map((item) => (

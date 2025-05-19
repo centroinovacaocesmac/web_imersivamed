@@ -71,7 +71,7 @@ export default function Exercise(){
                 placeholder="Digite a pergunta"
                 value={q.pergunta}
                 onChange={(e) => handleQuestionChange(qIndex, e.target.value)}
-                className="font-Poppins w-full px-4 py-2 mb-2 border border-grayColor3 rounded"
+                className="font-Poppins w-full px-4 py-2 mb-2 border border-grayColor3 rounded focus:outline-none focus:ring-1 focus:ring-grayColor4"
               />
               <div className="grid grid-cols-2 gap-4">
                 {q.opcoes.map((opcao, oIndex) => (
@@ -81,7 +81,7 @@ export default function Exercise(){
                     placeholder={`Alternativa ${oIndex + 1}`}
                     value={opcao}
                     onChange={(e) => handleOpcaoChange(qIndex, oIndex, e.target.value)}
-                    className="font-Poppins border border-grayColor3 rounded px-4 py-2"
+                    className="font-Poppins border border-grayColor3 rounded px-4 py-2 focus:outline-none focus:ring-1 focus:ring-grayColor4"
                   />
                 ))}
               </div>
