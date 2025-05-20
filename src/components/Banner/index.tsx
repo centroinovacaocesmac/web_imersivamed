@@ -1,4 +1,4 @@
-import DoctorComputer from "@assets/Images/computer_doctor.svg"
+import DoctorComputer from "@assets/Images/computer_doctor.svg";
 
 export default function Banner(){
     return(

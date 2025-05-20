@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { collection, query, where, getDocs, setDoc, doc, addDoc } from "firebase/firestore";
-// import { db } from "@lib/firebase";
+import { db } from "@lib/firebase";
 import Modal from "@components/Modal";
 import Button from "@components/Button";
 import Title from "@components/Title";
