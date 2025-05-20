@@ -129,7 +129,7 @@ export default function Content(){
         </div>
       )}
       <Modal isOpen={showModal} onClose={handleClose} title="Sucesso!">
-        <p className="font-Poppins text-blackColor1">Conteúdo de <strong>{selected}</strong> salvo com sucesso!</p>
+        <p className="font-Poppins text-blackColor1">Conteúdo sobre <strong>{selected}</strong> foi salvo com sucesso!</p>
       </Modal>
     </div>
   )
