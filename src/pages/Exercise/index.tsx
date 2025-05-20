@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { collection, query, where, getDocs, setDoc, doc, addDoc } from "firebase/firestore";
-import { db } from "@lib/firebase";
+// import { db } from "@lib/firebase";
 import Modal from "@components/Modal";
 import Button from "@components/Button";
 import Title from "@components/Title";
@@ -84,7 +84,7 @@ export default function Exercise(){
 
   return(
     <div className="flex flex-col min-h-screen gap-4 p-10">
-      <div className="mb-8">
+      <div className="my-8">
         <Title name="Cadastro de Exercício"/>
       </div>
       {!selected ? (
@@ -113,7 +113,7 @@ export default function Exercise(){
                   className="font-Poppins w-full px-4 py-2 mb-2 border border-grayColor3 rounded focus:outline-none focus:ring-1 focus:ring-grayColor4"
                 />
               )}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {q.options.map((opt, j) => (
                   <div key={j} className="flex items-center gap-2 mb-1">
                     {viewMode ? (

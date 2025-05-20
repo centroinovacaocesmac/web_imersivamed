@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collection, addDoc, query, where, getDocs, doc, setDoc } from "firebase/firestore";
-import { db } from "@lib/firebase"
+// import { db } from "@lib/firebase"
 import Button from "@components/Button";
 import Modal from "@components/Modal";
 import Title from "@components/Title";
@@ -79,7 +79,7 @@ export default function Content(){
 
   return(
     <div className="flex flex-col min-h-screen gap-4 p-10">
-      <div className="mb-8">
+      <div className="my-8">
         <Title name="Cadastro de Conteúdo"/>
       </div>
       {!selected ? (
