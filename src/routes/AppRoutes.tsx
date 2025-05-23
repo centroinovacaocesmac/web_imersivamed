@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useAuth } from "@contexts/AuthContext";
 import Assessment from "@pages/Assessment";
 import Content from "@pages/Content";
 import Exercise from "@pages/Exercise";
@@ -6,7 +7,6 @@ import Login from "@pages/Login";
 import Home from "@pages/Home";
 import Layout from "@components/Layout";
 import PrivateRoute from "@routes/PrivateRoute";
-import { useAuth } from "@contexts/AuthContext";
 
 export default function AppRoutes(){
     const { isAuthenticated } = useAuth();

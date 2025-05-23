@@ -97,7 +97,12 @@ export default function Exercise(){
         <div className="bg-white p-6 rounded">
           <div className="flex justify-between items-center">
             <h3 className="text-blackColor1 text-xl font-medium font-Poppins mb-4">Exercícios sobre {selected}</h3>
-            <Button name={viewMode ? "Editar" : "Visualizar"} nameClass="text-mainColor px-4 py-2 hover:text-mainColorVariant2 transition-colors duration-300 ease-in-out" onClick={() => setViewMode(!viewMode)}/>
+            <div className="flex flex-row gap-4">
+              {viewMode && (
+                <Button name="Voltar" nameClass="text-mainColor px-4 py-2 hover:text-mainColorVariant2 transition-colors duration-300 ease-in-out" onClick={() => setSelected(null)}/>
+              )}
+              <Button name={viewMode ? "Editar" : "Visualizar"} nameClass="text-mainColor px-4 py-2 hover:text-mainColorVariant2 transition-colors duration-300 ease-in-out" onClick={() => setViewMode(!viewMode)}/>
+            </div>
           </div>
           {questions.map((q, i) => (
             <div key={i} className="flex flex-col gap-2 mb-6">
